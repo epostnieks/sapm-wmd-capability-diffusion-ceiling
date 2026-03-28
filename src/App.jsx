@@ -12,8 +12,8 @@ import { BarChart, Bar, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, R
 const META = {
   title: "The Capability Diffusion Ceiling",
   subtitle: "§7a WMD SAPM — A New Impossibility Theorem",
-  beta: "—",
-  ci: "",
+  beta: "79512.01",
+  ci: "21746.27–194070.43",
   pi: "$50.0B",
   psa: "-$250.0B/yr",
   mu: "0.2 (20.0%)",
@@ -68,23 +68,24 @@ const HIGHLIGHTS = [
         "Iran within weeks of weapons-grade breakout; Saudi Arabia publicly stated counter-proliferation trigger. A1 not weakening.",
 ];
 
-const PSF_PARAMS = {pi_c:0.38,pi_p:38.0,w_c:190.0,kappa:0.96};
-const PSF_DATA = [{pi:0.04,w:189.99},{pi:2.01,w:189.66},{pi:3.99,w:188.32},{pi:5.96,w:185.99},{pi:7.94,w:182.63},{pi:9.91,w:178.29},{pi:11.88,w:172.96},{pi:13.86,w:166.58},{pi:15.83,w:159.24},{pi:17.81,w:150.85},{pi:19.78,w:141.49},{pi:21.76,w:131.09},{pi:23.73,w:119.73},{pi:25.71,w:107.31},{pi:27.68,w:93.95},{pi:29.66,w:79.51},{pi:31.63,w:64.14},{pi:33.6,w:47.77},{pi:35.58,w:30.31},{pi:37.55,w:11.94},{pi:39.53,w:-7.54},{pi:41.5,w:-27.92},{pi:43.48,w:-49.41},{pi:45.45,w:-71.8},{pi:47.43,w:-95.3},{pi:49.4,w:-119.69}];
+const PSF_PARAMS = {pi_c:5.0,pi_p:85.0,w_c:999999.0,kappa:2.8};
+const PSF_DATA = [{pi:0.5,w:991139.63},{pi:4.17,w:999697.61},{pi:7.83,w:996495.11},{pi:11.5,w:981514.64},{pi:15.17,w:954748.9},{pi:18.83,w:916318.94},{pi:22.5,w:866014.76},{pi:26.17,w:803925.3},{pi:29.83,w:730267.88},{pi:33.5,w:644639.98},{pi:37.17,w:547226.81},{pi:40.83,w:438341.92},{pi:44.5,w:317390.31},{pi:48.17,w:184653.42},{pi:51.83,w:40541.07},{pi:55.5,w:-115734.26},{pi:59.17,w:-283794.86},{pi:62.83,w:-463134.68},{pi:66.5,w:-654733.72},{pi:70.17,w:-858118.04},{pi:73.83,w:-1072685.32},{pi:77.5,w:-1299608.08},{pi:81.17,w:-1538316.11},{pi:84.83,w:-1788110.86},{pi:88.5,w:-2050357.32},{pi:92.17,w:-2324389.07},{pi:95.83,w:-2609411.28},{pi:99.5,w:-2906981.47},{pi:103.17,w:-3216336.93},{pi:106.83,w:-3536586.61},{pi:110.5,w:-3869480.51}];
 
-const MC_PARAMS = {n_draws:10000,mean:100.0,ci_lo:58.0,ci_hi:168.0,pct_hw:100.0,channels:[{name:"Nuclear weapons use probability × consequence",dist:"log-normal",lo:35.0,hi:72.0},{name:"Chemical/biological weapons proliferation",dist:"log-normal",lo:12.0,hi:32.0},{name:"Dual-use technology diffusion (AI, bio)",dist:"triangular",lo:8.0,hi:28.0},{name:"Non-state actor acquisition risk",dist:"triangular",lo:4.0,hi:18.0},{name:"Deterrence stability erosion",dist:"uniform",lo:2.0,hi:14.0}]};
-const MC_DATA = [{bin:"5.4",count:22},{bin:"16.2",count:53},{bin:"27.1",count:114},{bin:"37.9",count:220},{bin:"48.8",count:383},{bin:"59.6",count:599},{bin:"70.4",count:843},{bin:"81.2",count:1067},{bin:"92.1",count:1215},{bin:"102.9",count:1245},{bin:"113.8",count:1148},{bin:"124.6",count:952},{bin:"135.4",count:710},{bin:"146.2",count:477},{bin:"157.1",count:288},{bin:"167.9",count:156},{bin:"178.8",count:76},{bin:"189.6",count:33},{bin:"200.4",count:13},{bin:"211.2",count:4}];
+const MC_HIST = [{bin:"13585.85",lo:13585.8524,hi:20597.3844,count:365},{bin:"20597.38",lo:20597.3844,hi:27608.9164,count:632},{bin:"27608.92",lo:27608.9164,hi:34620.4484,count:786},{bin:"34620.45",lo:34620.4484,hi:41631.9804,count:832},{bin:"41631.98",lo:41631.9804,hi:48643.5125,count:840},{bin:"48643.51",lo:48643.5125,hi:55655.0445,count:739},{bin:"55655.04",lo:55655.0445,hi:62666.5765,count:728},{bin:"62666.58",lo:62666.5765,hi:69678.1085,count:690},{bin:"69678.11",lo:69678.1085,hi:76689.6405,count:525},{bin:"76689.64",lo:76689.6405,hi:83701.1725,count:477},{bin:"83701.17",lo:83701.1725,hi:90712.7045,count:433},{bin:"90712.70",lo:90712.7045,hi:97724.2366,count:371},{bin:"97724.24",lo:97724.2366,hi:104735.7686,count:296},{bin:"104735.77",lo:104735.7686,hi:111747.3006,count:276},{bin:"111747.30",lo:111747.3006,hi:118758.8326,count:239},{bin:"118758.83",lo:118758.8326,hi:125770.3646,count:227},{bin:"125770.36",lo:125770.3646,hi:132781.8966,count:151},{bin:"132781.90",lo:132781.8966,hi:139793.4286,count:157},{bin:"139793.43",lo:139793.4286,hi:146804.9606,count:132},{bin:"146804.96",lo:146804.9606,hi:153816.4927,count:107},{bin:"153816.49",lo:153816.4927,hi:160828.0247,count:104},{bin:"160828.02",lo:160828.0247,hi:167839.5567,count:87},{bin:"167839.56",lo:167839.5567,hi:174851.0887,count:86},{bin:"174851.09",lo:174851.0887,hi:181862.6207,count:60},{bin:"181862.62",lo:181862.6207,hi:188874.1527,count:72},{bin:"188874.15",lo:188874.1527,hi:195885.6847,count:49},{bin:"195885.68",lo:195885.6847,hi:202897.2168,count:50},{bin:"202897.22",lo:202897.2168,hi:209908.7488,count:53},{bin:"209908.75",lo:209908.7488,hi:216920.2808,count:31},{bin:"216920.28",lo:216920.2808,hi:223931.8128,count:38},{bin:"223931.81",lo:223931.8128,hi:230943.3448,count:25},{bin:"230943.34",lo:230943.3448,hi:237954.8768,count:30},{bin:"237954.88",lo:237954.8768,hi:244966.4088,count:16},{bin:"244966.41",lo:244966.4088,hi:251977.9409,count:28},{bin:"251977.94",lo:251977.9409,hi:258989.4729,count:16},{bin:"258989.47",lo:258989.4729,hi:266001.0049,count:16},{bin:"266001.00",lo:266001.0049,hi:273012.5369,count:19},{bin:"273012.54",lo:273012.5369,hi:280024.0689,count:16},{bin:"280024.07",lo:280024.0689,hi:287035.6009,count:15},{bin:"287035.60",lo:287035.6009,hi:294047.1329,count:10},{bin:"294047.13",lo:294047.1329,hi:301058.6649,count:12},{bin:"301058.66",lo:301058.6649,hi:308070.1970,count:11},{bin:"308070.20",lo:308070.1970,hi:315081.7290,count:8},{bin:"315081.73",lo:315081.7290,hi:322093.2610,count:12},{bin:"322093.26",lo:322093.2610,hi:329104.7930,count:8},{bin:"329104.79",lo:329104.7930,hi:336116.3250,count:4},{bin:"336116.33",lo:336116.3250,hi:343127.8570,count:9},{bin:"343127.86",lo:343127.8570,hi:350139.3890,count:2},{bin:"350139.39",lo:350139.3890,hi:357150.9211,count:5},{bin:"357150.92",lo:357150.9211,hi:364162.4531,count:5}];
+const MC_STATS = {mean:79512.0107,median:62842.3762,ci_lo:21746.2708,ci_hi:194070.4304,pct_hw:100.0,pct_above_3:100.0,pct_above_5:100.0,min:7076.9434,max:769860.3857,n_draws:10000,seed:42};
+const MC_CHANNELS = [{name:"Nuclear first-use EV",mean:6402558.60,p5:1586973.50,p50:5045737.47,p95:15830484.94,share:0.9318},{name:"Knowledge diffusion stock",mean:244207.43,p5:70204.77,p50:199622.40,p95:561865.85,share:0.0355},{name:"LAWS autonomous diffusion",mean:19563.68,p5:4926.22,p50:17812.13,p95:39819.76,share:0.0028},{name:"WMD terrorism premium",mean:132372.50,p5:28282.96,p50:99897.11,p95:340981.02,share:0.0193},{name:"New START instability",mean:11023.22,p5:2886.78,p50:11034.65,p95:19082.23,share:0.0016},{name:"Proliferation ratchet",mean:61627.70,p5:17424.75,p50:50047.38,p95:144650.22,share:0.0090}];
+const MC_WELFARE = {mean:6871353.12,ci_lo:2012420.16,ci_hi:16330135.76};
 
-const THRESHOLDS = [{domain:"NPT erosion and withdrawal threshold",year:2024,status:"DPRK withdrew from NPT (2003); Iran enriching to 60% (IAEA 2024); 9 nuclear-armed states hold 12,121 warheads (SIPRI 2024); NPT RevCon 2020/2026 failed to produce consensus document",confidence:"High",crossed:true},{domain:"Bioweapons synthesis accessibility",year:2025,status:"Benchtop DNA synthesis costs fell from $10/bp (2000) to $0.07/bp (2024); AI protein structure prediction (AlphaFold) and de novo protein design lower barriers to gain-of-function research; WHO Global Health Security Index shows 75% of countries unprepared for bioweapon event",confidence:"Medium",crossed:false},{domain:"Autonomous weapons proliferation",year:2028,status:"CCW GGE on LAWS: no binding instrument after 10+ years; autonomous drones deployed in Libya (2020), Nagorno-Karabakh (2020), Ukraine (2022–); commercial drone-to-weapon conversion demonstrated",confidence:"Medium",crossed:false},{domain:"Nuclear arsenal modernization completion",year:2035,status:"All 9 nuclear states modernizing arsenals simultaneously; US $1.7T modernization program (2017–2046); Russia deploying Sarmat, Poseidon; China expanding to estimated 1,000 warheads by 2030 (DoD 2023)",confidence:"High",crossed:false}];
+const THRESHOLDS = [{domain:"New START treaty expiration (no successor)",year:2026,confidence:"High",status:"Expired February 5, 2026 — first time since 1972 no binding US-Russia nuclear limits",crossed:true},{domain:"Iran nuclear breakout capability (weeks to weapons-grade HEU)",year:2023,confidence:"High",status:"IAEA: sufficient 60% enriched uranium for multiple weapons if further enriched",crossed:true},{domain:"LAWS first confirmed autonomous combat kill (Kargu-2)",year:2020,confidence:"High",status:"UN Panel of Experts S/2021/229 confirmed autonomous engagement Libya 2020",crossed:true},{domain:"10 nuclear-capable states",year:2035,confidence:"Low",status:"Currently 9; Iran and Saudi Arabia are next-most-likely candidates",crossed:false},{domain:"CCW LAWS treaty deadline (2026 review conference)",year:2026,confidence:"Medium",status:"Pre-proliferation window closing; US, Russia, China blocking binding instrument",crossed:false},{domain:"A.Q. Khan P-2 designs operationalized in North Korea",year:2010,confidence:"High",status:"Confirmed by nuclear test evidence and centrifuge facility imagery",crossed:true}];
 
-const AXIOMS = {type:"impossibility",items:[{id:"A1",name:"Knowledge Diffusion Irreversibility",description:"Nuclear weapons physics has been publicly available since Smyth Report (1945) and declassified Teller–Ulam design principles. Centrifuge enrichment technology spread via A.Q. Khan network to Libya, Iran, DPRK. Once knowledge diffuses, it cannot be un-diffused—this is an information-theoretic impossibility (entropy of knowledge only increases)."},{id:"A2",name:"Dual-Use Technology Indistinguishability",description:"Uranium enrichment, biocontainment labs, chemical feedstocks, and missile technology are inherently dual-use; there is no physical way to distinguish peaceful nuclear fuel enrichment from weapons-grade enrichment until >20% U-235 concentration. CWC’s Schedule 1/2/3 chemical lists cannot cover all possible nerve agent precursors (organophosphorus chemistry is vast)."},{id:"A3",name:"Deterrence Instability Under Multipolarity",description:"Schelling (1960) showed bilateral deterrence is conditionally stable; extending to N>2 nuclear actors creates combinatorial instability—credible second-strike assurance becomes mathematically impossible with >5 nuclear actors with diverse delivery systems, doctrines, and C3I vulnerabilities. Current 9-actor system exceeds this threshold."}]};
+const AXIOMS = {type:"impossibility",items:[{id:"A1",name:"Security Necessity",description:"States and well-resourced non-state actors will continue to seek WMD and LAWS capability under interstate security competition; no single actor can eliminate this demand through unilateral action — though A1 is potentially dissolvable through systemic security architecture transformation."},{id:"A2",name:"Knowledge Transfer Identity",description:"Transferring WMD manufacturing knowledge or LAWS targeting capability and permanently enabling the recipient\'s independent capability are the same transactional event; knowledge cannot be re-classified into secrecy after diffusion — the A.Q. Khan P-2 centrifuge designs in North Korea cannot be deleted."},{id:"A3",name:"Proliferation Ratchet",description:"Each capability demonstration creates new demand nodes: 1 nuclear state in 1945 became 9 in 2026 without reversal except South Africa (which required complete regime change, not institutional reform). The Kargu-2 combat deployment has permanently demonstrated autonomous lethal targeting viability to all defense establishments."}]};
 
 const METHODS_DATA = {
-  welfare_function: "W = −P(use) × Consequence(use). Nuclear exchange welfare cost: Toon et al. (2019, Science Advances) estimate India-Pakistan nuclear war (100 Hiroshima-sized weapons) = 27–47M immediate deaths + nuclear winter causing 2B+ famine deaths. P(nuclear use this century) estimated at 10–40% (Ord 2020; Hellman 2008).",
-  cooperative_baseline: "Universal NPT compliance + CTBT entry into force + TPNW adherence by nuclear states + BWC verification protocol + CWC universal membership + LAWS ban; cooperative Π_C = $0.38B reflects legitimate dual-use research under strict safeguards only.",
-  falsification: ["If nuclear disarmament reduces global warheads to <1,000 and delivery systems are verifiably dismantled, multipolarity instability decreases.","If DNA synthesis screening achieves 100% coverage of all commercial providers and prevents misuse, bioweapons accessibility ceiling rises.","If Monte Carlo robustness for β_W > 1 falls below 80%, point estimate is unreliable.","If autonomous weapons ban achieves universal compliance (analogous to Blinding Lasers Protocol), LAWS channel closes."],
-  key_sources: ["SIPRI (2024). SIPRI Yearbook 2024: Armaments, Disarmament and International Security.","Toon, O.B. et al. (2019). Rapidly expanding nuclear arsenals in Pakistan and India. Science Advances 5(10).","Ord, T. (2020). The Precipice: Existential Risk and the Future of Humanity. Bloomsbury.","Schelling, T.C. (1960). The Strategy of Conflict. Harvard University Press.","IAEA (2024). Iran NPT Safeguards Agreement: Director General Report. GOV/2024/15."]
+  welfare_function: "W computed as expected value of catastrophic welfare destruction from accumulated diffusion state: P(nuclear use | current proliferation state) × E[welfare destruction | nuclear exchange] + LAWS autonomous targeting proliferation risk + WMD terrorism risk premium. Unique structure: welfare destruction is backward-looking, from existing accumulated diffusion state, not ongoing extraction.",
+  cooperative_baseline: "WMD capability limited to five original nuclear states under verified reduction protocols, with no LAWS combat deployment and comprehensive knowledge-transfer controls — the pre-Khan, pre-LAWS baseline from which the ratchet has irreversibly advanced.",
+  falsification: ["F1: Demonstrate that WMD manufacturing knowledge can be recalled from a sovereign state\'s classified technical personnel after it has been operationalized in a weapons program (falsifies A2).","F2: Show that a nuclear-capable state has been verifiably de-proliferated through institutional means (sanctions, treaty compliance, verification) without requiring complete political regime transformation — South Africa required regime change, not institutional reform (falsifies A3).","F3: Demonstrate that interstate security competition can be eliminated through institutional design without requiring systemic transformation of the international security architecture (would dissolve A1)."],
+  key_sources: ["FAS, Status of World Nuclear Forces (2026)","New START expiration documentation (February 2026)","UN Panel of Experts on Libya, S/2021/229 (Kargu-2 confirmation)","Gordon Corera, Shopping for Bombs (2006) — Khan network irreversibility"]
 };
-
 
 // ─── Color palette ───────────────────────────────────────────────────────────
 const C = {
@@ -335,51 +336,58 @@ export default function WMD7aCapabilityDiffusionCeilingDashboard() {
             </div>
           </div>
         )}
-
         {/* MONTE CARLO TAB */}
         {tab === 'monte-carlo' && (
           <div>
-            <SectionTitle>Monte Carlo Robustness — {MC_PARAMS.n_draws.toLocaleString()} Draws</SectionTitle>
+            <SectionTitle>Monte Carlo Simulation — {MC_STATS.n_draws.toLocaleString()} Draws (seed={MC_STATS.seed})</SectionTitle>
             <div style={{background:C.panel,border:`1px solid ${C.border}`,borderRadius:4,padding:16,marginBottom:16}}>
-              <ResponsiveContainer width="100%" height={280}>
-                <BarChart data={MC_DATA} margin={{top:10,right:30,left:20,bottom:10}}>
+              <ResponsiveContainer width="100%" height={300}>
+                <BarChart data={MC_HIST} margin={{top:10,right:30,left:20,bottom:30}}>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.06)" />
-                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:10}} />
+                  <XAxis dataKey="bin" stroke={C.muted} tick={{fontFamily:C.mono,fontSize:9}} angle={-45} textAnchor="end" interval={4} />
                   <YAxis stroke={C.muted} tick={{fontFamily:C.mono,fontSize:11}} />
-                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} />
+                  <Tooltip contentStyle={{background:C.panel,border:`1px solid ${C.border}`,fontFamily:C.mono,fontSize:12,color:C.text}} formatter={(v)=>[v,'Draws']} />
                   <Bar dataKey="count" fill={C.gold} />
-                  <ReferenceLine x={MC_PARAMS.mean.toFixed(1)} stroke={C.crimson} strokeDasharray="5 5" label={{value:'β̄='+MC_PARAMS.mean,fill:C.crimson,fontFamily:C.mono,fontSize:11}} />
+                  <ReferenceLine x={MC_STATS.mean.toFixed(2)} stroke={C.crimson} strokeWidth={2} strokeDasharray="5 5" label={{value:'μ='+MC_STATS.mean.toFixed(2),fill:C.crimson,fontFamily:C.mono,fontSize:11,position:'top'}} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
             <div style={{display:'flex',gap:12,flexWrap:'wrap',marginBottom:16}}>
-              <Metric label="MEAN β_W" value={MC_PARAMS.mean} color={C.gold} />
-              <Metric label="90% CI" value={'['+MC_PARAMS.ci_lo+', '+MC_PARAMS.ci_hi+']'} color={C.muted} />
-              <Metric label="% HOLLOW WIN" value={MC_PARAMS.pct_hw+'%'} color={MC_PARAMS.pct_hw > 90 ? C.crimson : C.gold} />
+              <Metric label="MEAN β_W" value={MC_STATS.mean.toFixed(2)} sub={'Median: '+MC_STATS.median.toFixed(2)} color={C.gold} />
+              <Metric label="90% CI" value={'['+MC_STATS.ci_lo.toFixed(2)+', '+MC_STATS.ci_hi.toFixed(2)+']'} sub={'Range: '+MC_STATS.min.toFixed(2)+'–'+MC_STATS.max.toFixed(2)} color={C.muted} />
+              <Metric label="% HOLLOW WIN" value={MC_STATS.pct_hw.toFixed(1)+'%'} sub={'β_W > 1 in all draws'} color={MC_STATS.pct_hw > 95 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 3" value={MC_STATS.pct_above_3.toFixed(1)+'%'} color={MC_STATS.pct_above_3 > 90 ? C.crimson : C.gold} />
+              <Metric label="% β_W > 5" value={MC_STATS.pct_above_5.toFixed(1)+'%'} color={MC_STATS.pct_above_5 > 50 ? '#D97706' : C.gold} />
             </div>
-            {MC_PARAMS.channels && MC_PARAMS.channels.length > 0 && (
-              <div style={{padding:16,background:C.panel,border:`1px solid ${C.border}`,borderRadius:4}}>
-                <div style={{fontFamily:C.mono,fontSize:12,color:C.gold,marginBottom:8}}>DISTRIBUTION PARAMETERS</div>
-                <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
-                  <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>CHANNEL</th>
-                    <th style={{padding:'6px 10px',textAlign:'left',color:C.gold}}>DISTRIBUTION</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>LOW</th>
-                    <th style={{padding:'6px 10px',textAlign:'right',color:C.gold}}>HIGH</th>
-                  </tr></thead>
-                  <tbody>
-                    {MC_PARAMS.channels.map((ch,i) => (
-                      <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
-                        <td style={{padding:'6px 10px',color:C.text}}>{ch.name}</td>
-                        <td style={{padding:'6px 10px',color:C.muted}}>{ch.dist}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.lo}</td>
-                        <td style={{padding:'6px 10px',color:C.muted,textAlign:'right'}}>{ch.hi}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
+            <SectionTitle>Channel Welfare Contributions</SectionTitle>
+            <table style={{width:'100%',borderCollapse:'collapse',fontFamily:C.mono,fontSize:13}}>
+              <thead><tr style={{borderBottom:`1px solid ${C.border}`}}>
+                <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CHANNEL</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>MEAN $B</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P5</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P50</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>P95</th>
+                <th style={{padding:'8px 12px',textAlign:'right',color:C.gold}}>SHARE</th>
+              </tr></thead>
+              <tbody>
+                {MC_CHANNELS.map((ch,i) => (
+                  <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`,background:i%2===0?C.panel:C.bg}}>
+                    <td style={{padding:'8px 12px',color:C.text,fontFamily:C.serif,fontSize:14}}>{ch.name}</td>
+                    <td style={{padding:'8px 12px',color:C.gold,textAlign:'right',fontWeight:600}}>{ch.mean.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p5.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p50.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{ch.p95.toFixed(1)}</td>
+                    <td style={{padding:'8px 12px',color:C.muted,textAlign:'right'}}>{(ch.share*100).toFixed(1)}%</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div style={{marginTop:16,padding:12,background:'rgba(245,158,11,0.06)',border:`1px solid rgba(245,158,11,0.15)`,borderRadius:4}}>
+              <div style={{fontFamily:C.mono,fontSize:11,color:C.muted}}>Total welfare cost: <span style={{color:C.gold}}>${MC_WELFARE.mean.toFixed(1)}B</span> (90% CI: ${MC_WELFARE.ci_lo.toFixed(1)}B – ${MC_WELFARE.ci_hi.toFixed(1)}B) · Source: sapm_monte_carlo.py (seed=42)</div>
+            </div>
+          </div>
+        )}
+
           </div>
         )}
 

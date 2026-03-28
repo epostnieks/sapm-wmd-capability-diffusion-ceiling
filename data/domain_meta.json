@@ -1,0 +1,145 @@
+{
+  "key": "sapm-wmd-capability-diffusion-ceiling",
+  "meta_fill": {
+    "pi": "$85B",
+    "psa": "undefined \u2014 welfare risk is backward-looking, not flow-based",
+    "mu": "undefined \u2014 no market mechanism reduces accumulated diffusion state to zero",
+    "kappa": "2.80"
+  },
+  "psf": {
+    "pi_c": 5.0,
+    "pi_p": 85.0,
+    "w_c": 999999.0,
+    "kappa": 2.8
+  },
+  "monte_carlo": {
+    "mean": 999.0,
+    "ci_lo": 120.0,
+    "ci_hi": 9999.0,
+    "pct_hw": 100.0,
+    "n_draws": 10000,
+    "channels": [
+      {
+        "name": "Nuclear first-use expected welfare cost",
+        "dist": "log-normal",
+        "lo": 50000,
+        "hi": 5000000,
+        "mode": 500000
+      },
+      {
+        "name": "Accumulated knowledge diffusion stock",
+        "dist": "log-normal",
+        "lo": 5000,
+        "hi": 200000,
+        "mode": 40000
+      },
+      {
+        "name": "LAWS autonomous targeting diffusion",
+        "dist": "triangular",
+        "lo": 500,
+        "hi": 50000,
+        "mode": 8000
+      },
+      {
+        "name": "WMD terrorism risk premium",
+        "dist": "log-normal",
+        "lo": 1000,
+        "hi": 100000,
+        "mode": 12000
+      },
+      {
+        "name": "New START expiration instability",
+        "dist": "uniform",
+        "lo": 2000,
+        "hi": 20000,
+        "mode": 10000
+      },
+      {
+        "name": "Proliferation ratchet forward trajectory",
+        "dist": "log-normal",
+        "lo": 1000,
+        "hi": 50000,
+        "mode": 8000
+      }
+    ]
+  },
+  "thresholds": [
+    {
+      "domain": "New START treaty expiration (no successor)",
+      "year": 2026,
+      "confidence": "High",
+      "status": "Expired February 5, 2026 \u2014 first time since 1972 no binding US-Russia nuclear limits",
+      "crossed": true
+    },
+    {
+      "domain": "Iran nuclear breakout capability (weeks to weapons-grade HEU)",
+      "year": 2023,
+      "confidence": "High",
+      "status": "IAEA: sufficient 60% enriched uranium for multiple weapons if further enriched",
+      "crossed": true
+    },
+    {
+      "domain": "LAWS first confirmed autonomous combat kill (Kargu-2)",
+      "year": 2020,
+      "confidence": "High",
+      "status": "UN Panel of Experts S/2021/229 confirmed autonomous engagement Libya 2020",
+      "crossed": true
+    },
+    {
+      "domain": "10 nuclear-capable states",
+      "year": 2035,
+      "confidence": "Low",
+      "status": "Currently 9; Iran and Saudi Arabia are next-most-likely candidates",
+      "crossed": false
+    },
+    {
+      "domain": "CCW LAWS treaty deadline (2026 review conference)",
+      "year": 2026,
+      "confidence": "Medium",
+      "status": "Pre-proliferation window closing; US, Russia, China blocking binding instrument",
+      "crossed": false
+    },
+    {
+      "domain": "A.Q. Khan P-2 designs operationalized in North Korea",
+      "year": 2010,
+      "confidence": "High",
+      "status": "Confirmed by nuclear test evidence and centrifuge facility imagery",
+      "crossed": true
+    }
+  ],
+  "axioms": {
+    "type": "impossibility",
+    "items": [
+      {
+        "id": "A1",
+        "name": "Security Necessity",
+        "description": "States and well-resourced non-state actors will continue to seek WMD and LAWS capability under interstate security competition; no single actor can eliminate this demand through unilateral action \u2014 though A1 is potentially dissolvable through systemic security architecture transformation."
+      },
+      {
+        "id": "A2",
+        "name": "Knowledge Transfer Identity",
+        "description": "Transferring WMD manufacturing knowledge or LAWS targeting capability and permanently enabling the recipient's independent capability are the same transactional event; knowledge cannot be re-classified into secrecy after diffusion \u2014 the A.Q. Khan P-2 centrifuge designs in North Korea cannot be deleted."
+      },
+      {
+        "id": "A3",
+        "name": "Proliferation Ratchet",
+        "description": "Each capability demonstration creates new demand nodes: 1 nuclear state in 1945 became 9 in 2026 without reversal except South Africa (which required complete regime change, not institutional reform). The Kargu-2 combat deployment has permanently demonstrated autonomous lethal targeting viability to all defense establishments."
+      }
+    ]
+  },
+  "methods": {
+    "welfare_function": "W computed as expected value of catastrophic welfare destruction from accumulated diffusion state: P(nuclear use | current proliferation state) \u00d7 E[welfare destruction | nuclear exchange] + LAWS autonomous targeting proliferation risk + WMD terrorism risk premium. Unique structure: welfare destruction is backward-looking, from existing accumulated diffusion state, not ongoing extraction.",
+    "cooperative_baseline": "WMD capability limited to five original nuclear states under verified reduction protocols, with no LAWS combat deployment and comprehensive knowledge-transfer controls \u2014 the pre-Khan, pre-LAWS baseline from which the ratchet has irreversibly advanced.",
+    "key_sources": [
+      "FAS, Status of World Nuclear Forces (2026)",
+      "New START expiration documentation (February 2026)",
+      "UN Panel of Experts on Libya, S/2021/229 (Kargu-2 confirmation)",
+      "Gordon Corera, Shopping for Bombs (2006) \u2014 Khan network irreversibility"
+    ],
+    "falsification": [
+      "F1: Demonstrate that WMD manufacturing knowledge can be recalled from a sovereign state's classified technical personnel after it has been operationalized in a weapons program (falsifies A2).",
+      "F2: Show that a nuclear-capable state has been verifiably de-proliferated through institutional means (sanctions, treaty compliance, verification) without requiring complete political regime transformation \u2014 South Africa required regime change, not institutional reform (falsifies A3).",
+      "F3: Demonstrate that interstate security competition can be eliminated through institutional design without requiring systemic transformation of the international security architecture (would dissolve A1)."
+    ]
+  }
+}
