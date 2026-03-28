@@ -388,9 +388,6 @@ export default function WMD7aCapabilityDiffusionCeilingDashboard() {
           </div>
         )}
 
-          </div>
-        )}
-
         {/* THRESHOLDS TAB */}
         {tab === 'thresholds' && (
           <div>
