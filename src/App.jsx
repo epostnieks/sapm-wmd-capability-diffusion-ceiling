@@ -285,7 +285,7 @@ export default function WMD7aCapabilityDiffusionCeilingDashboard() {
           <span style={{fontFamily:C.mono,fontSize:42,fontWeight:700,color:"#F59E0B"}}>𝒮_W = 0.33</span>
         </div>
         <div style={{fontFamily:C.mono,fontSize:11,color:C.muted,marginBottom:16}}>
-          S&P 500 long-run Sharpe ≈ 0.40 &nbsp;|&nbsp; Acceptable ≥ 0.30 &nbsp;|&nbsp; Poor < 0.10
+          S&P 500 long-run Sharpe ≈ 0.40 &nbsp;|&nbsp; Acceptable ≥ 0.30 &nbsp;|&nbsp; Poor &lt; 0.10
         </div>
         <div style={{fontFamily:C.serif,fontSize:14,color:"#F59E0B",lineHeight:1.7,fontStyle:"italic"}}>
           This sector generates meaningful private value relative to welfare cost — but remains in Hollow Win territory.
